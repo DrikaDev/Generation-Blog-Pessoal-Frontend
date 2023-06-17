@@ -1,6 +1,5 @@
-import React from "react";
 import "./home.css";
-import { Paper, Button, Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 
 function Home() {
@@ -11,7 +10,6 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{ backgroundColor: "#eab715" }}
       >
         <Grid alignItems="center" item xs={6}>
           <Box padding={13}>
@@ -22,7 +20,7 @@ function Home() {
               color="textPrimary"
               component="h3"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className="titulo"
             >
               Seja bem vinde ao meu Blog!
             </Typography>
@@ -31,11 +29,7 @@ function Home() {
               <Box marginRight={1}></Box>
               <Button
                 variant="outlined"
-                style={{
-                  borderColor: "white",
-                  backgroundColor: "#eab715",
-                  color: "white",
-                }}
+                className="botao"
               >
                 Ver Postagens
               </Button>
@@ -52,7 +46,7 @@ function Home() {
           />
         </Grid>
 
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+        <Grid xs={12} className="postagens"></Grid>
       </Grid>
     </>
   );
