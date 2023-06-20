@@ -3,4 +3,4 @@
 
 # Fazendo o Frontend do Backend do Projeto Blog Pessoal
 
-![BlogPessoal 1](https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/288efeb5-fa9f-4137-b93e-629b9aaa8220)
+![BlogPessoal](https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/594e2acb-53e5-448b-8132-0bd07cc2d65e)
