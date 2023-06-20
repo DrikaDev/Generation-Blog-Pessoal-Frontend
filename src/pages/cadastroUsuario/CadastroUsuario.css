@@ -1,9 +1,4 @@
-.textos{
-    font-weight: bold !important;
-    color: black !important;
-}
-
-.imagemLogin{
+.imagemCadastro{
     background-image: url(https://img.freepik.com/vetores-premium/bla-bla-padrao-sem-emenda-de-letras-a-mao-com-baloes-de-fala-amarelos-buzz-concept-chat_511660-391.jpg?w=996);
     background-repeat: no-repeat;
     width: 100vh;
@@ -12,6 +7,11 @@
     background-position: center;
 }
 
-.text-decorator-none{
-    text-decoration: none;
+.textos2{
+    font-weight: bold !important;
+    font-size: 2rem !important;
+}
+
+.btnCancelar{
+    margin-right: 20px !important;
 }

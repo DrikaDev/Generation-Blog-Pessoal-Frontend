@@ -1,4 +1,4 @@
-import "./home.css";
+import "./Home.css";
 import { Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 
