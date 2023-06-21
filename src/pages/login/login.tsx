@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -37,7 +38,7 @@ function Login() {
     //console.log('userLogin:' + Object.values(userLogin));
 
     try {
-      await login(`/usuario/logar`, userLogin, setToken);
+      await login(`/usuarios/logar`, userLogin, setToken);
       alert("Usuário logado com sucesso!");
     } catch (error) {
       alert("Dados do usuário incorretos!");
@@ -63,8 +64,8 @@ function Login() {
             <TextField
               value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
-              id="usuario"
-              label="Nome do usuário"
+              id="Email"
+              label="Email do usuário"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -79,6 +80,7 @@ function Login() {
               variant="outlined"
               name="senha"
               margin="normal"
+              type="password"
               fullWidth
             />
 

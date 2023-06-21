@@ -1,3 +1,4 @@
+import React from "react";
 import { AppBar, Toolbar, Box, Typography,  } from "@mui/material";
 import { Link } from 'react-router-dom'
 import './navbar.css'
@@ -5,7 +6,7 @@ import './navbar.css'
 function Navbar() {
   return (
     <>
-      <AppBar position="static" style={{backgroundColor: "#edb008"}}>
+      <AppBar position="static" style={{backgroundColor: "#eab715"}}>
         <Toolbar variant="dense" >
           <Box className="cursor">
             <Typography variant="h5" color="inherit">

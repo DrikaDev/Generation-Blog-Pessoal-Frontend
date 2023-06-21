@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,7 +10,7 @@ function CadastroUsuario() {
     let navigate = useNavigate();
     //não utilizar o let history = useHistory()
   
-    const [confirmarSenha, setConfirmarSenha] = useState<String>(" ");
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("");
     const [user, setUser] = useState<User>({
       id: 0,
       nome: "",
@@ -22,7 +23,7 @@ function CadastroUsuario() {
       nome: "",
       usuario: "",
       senha: ""
-    })
+    });
   
     useEffect(() => {
       if (userResult.id != 0) {
@@ -35,7 +36,7 @@ function CadastroUsuario() {
     }
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>){
-      setUserResult({
+      setUser({
         ...user,
         [e.target.name]: e.target.value
       })
@@ -44,7 +45,7 @@ function CadastroUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
       e.preventDefault();
       if(confirmarSenha == user.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUser)
+        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
         alert ("Usuário cadastrado com sucesso!")
       }else{
         alert ("Dados incorretos, favor verificar!")
@@ -88,8 +89,8 @@ function CadastroUsuario() {
               <TextField
                 value={user.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                id="usuario"
-                label="usuario"
+                id="email"
+                label="email"
                 variant="outlined"
                 name="usuario"
                 margin="normal"
@@ -114,7 +115,7 @@ function CadastroUsuario() {
                 id="confirmar senha"
                 label="confirme senha com 8 dígitos"
                 variant="outlined"
-                name="confirmar senha"
+                name="senha"
                 margin="normal"
                 type="password"
                 fullWidth
