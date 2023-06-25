@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import Conversation from "../../assets/conversation.svg"
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
+import ModalPostagem from "../../components/postagens/modalPostagem/MoldaPostagem";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
+import { Style } from "@mui/icons-material";
 
 function Home() {
+
+  const navigate = useNavigate();
+  const [token, setToken] = useLocalStorage('token');
+
+  useEffect(() => {
+    if (token == ""){
+      alert ("Você precisa estar loga!")
+      navigate ("/login")
+    }
+  }, [token])
+
   return (
     <>
       <Grid
@@ -13,6 +27,7 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        
       >
         <Grid alignItems="center" item xs={6}>
           <Box padding={13}>
@@ -29,7 +44,9 @@ function Home() {
             </Typography>
 
             <Box display="flex" justifyContent="center">
-              <Box marginRight={1}></Box>
+              <Box marginRight={1}>
+                <ModalPostagem />
+              </Box>
               <Button
                 variant="outlined"
                 className="botao"
