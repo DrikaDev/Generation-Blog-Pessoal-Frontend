@@ -55,7 +55,7 @@ function CadastroPost() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscaId(`postagem/$(id)`, setPostagem, {
+        await buscaId(`postagem/${id}`, setPostagem, {
             headers: {
                 'Authorizatio': token
             }
@@ -70,7 +70,7 @@ function CadastroPost() {
         }) 
     }
 
-    async function onSubmit(e: ChangeEvent<HTMLInputElement>) {
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (id !== undefined){
@@ -92,7 +92,7 @@ function CadastroPost() {
     }
 
     function back(){
-        navigate('/posts')
+        navigate('/postagens')
     }
 
     return (
@@ -113,7 +113,7 @@ function CadastroPost() {
                 name="titulo"
                 variant="outlined"
                 margin="normal"
-                fullWidth ></TextField>
+                fullWidth />
 
                 <TextField
                 value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
@@ -122,7 +122,7 @@ function CadastroPost() {
                 name="texto"
                 variant="outlined"
                 margin="normal"
-                fullWidth ></TextField>
+                fullWidth />
 
                 <FormControl>
                 <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
@@ -136,11 +136,10 @@ function CadastroPost() {
                     })}>
                         
                     {
-                        temas.map(itens => (
+                        temas.map(tema => (
                             <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
                         ))
                     }
-
                 </Select>
 
                 <FormHelperText>Escolha um tema para a postagem</FormHelperText>
@@ -152,7 +151,7 @@ function CadastroPost() {
                 </FormControl>
             </form>
         </Container>
-  );
+  )
 }
 
 export default CadastroPost;
