@@ -1,24 +1,24 @@
 import React, { useEffect } from "react";
-import { Button, Grid, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import ModalPostagem from "../../components/postagens/modalPostagem/MoldaPostagem";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/TokensReducer";
 import "./Home.css";
-import { useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
-import { Style } from "@mui/icons-material";
 
 function Home() {
-
   const navigate = useNavigate();
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
-    if (token == ""){
-      alert ("Você precisa estar loga!")
-      navigate ("/login")
+    if (token == "") {
+      alert("Você precisa estar loga!");
+      navigate("/login");
     }
-  }, [token])
+  }, [token]);
 
   return (
     <>
@@ -27,11 +27,9 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        
       >
         <Grid alignItems="center" item xs={6}>
           <Box padding={13}>
-            
             <Typography
               variant="h3"
               gutterBottom
@@ -47,14 +45,12 @@ function Home() {
               <Box marginRight={1}>
                 <ModalPostagem />
               </Box>
-              <Button
-                variant="outlined"
-                className="botao"
-              >
-                Ver Postagens
-              </Button>
+              <Link to={"/postagens"} className="text-decorator-none">
+                <Button variant="outlined" className="botao">
+                  Ver Postagens
+                </Button>
+              </Link>
             </Box>
-
           </Box>
         </Grid>
 

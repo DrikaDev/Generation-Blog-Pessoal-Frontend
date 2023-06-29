@@ -4,10 +4,18 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { Grid, Box, Typography } from "@material-ui/core";
 import "./footer.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 
 function Footer() {
-  return (
-    <>
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  //renderização condicional do Footer:
+  var footerComponent;
+  if (token != "") {
+    footerComponent = (
       <Grid
         container
         direction="row"
@@ -22,25 +30,39 @@ function Footer() {
               alignItems="center"
               justifyContent="center"
             >
-              <Typography variant="h5" align="center" gutterBottom className="textosFooter" >
+              <Typography
+                variant="h5"
+                align="center"
+                gutterBottom
+                className="textosFooter"
+              >
                 Siga-me nas redes sociais!
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="import FacebookIcon from '@mui/icons-material/Facebook';" target="_blank">
+              <a
+                href="import FacebookIcon from '@mui/icons-material/Facebook';"
+                target="_blank"
+              >
                 <FacebookIcon className="redes" />
               </a>
-              <a href="import InstagramIcon from '@mui/icons-material/Instagram';" target="_blank">
+              <a
+                href="import InstagramIcon from '@mui/icons-material/Instagram';"
+                target="_blank"
+              >
                 <InstagramIcon className="redes" />
               </a>
-              <a href="import LinkedInIcon from '@mui/icons-material/LinkedIn';" target="_blank">
+              <a
+                href="import LinkedInIcon from '@mui/icons-material/LinkedIn';"
+                target="_blank"
+              >
                 <LinkedInIcon className="redes" />
               </a>
             </Box>
           </Box>
 
-          <Box className="box2" >
+          <Box className="box2">
             <Box paddingTop="{1}">
               <Typography
                 variant="subtitle2"
@@ -52,13 +74,13 @@ function Footer() {
                 Generation
               </Typography>
             </Box>
-
-
           </Box>
         </Grid>
       </Grid>
-    </>
-  );
+    );
+  }
+
+  return <>{footerComponent}</>;
 }
 
 export default Footer;

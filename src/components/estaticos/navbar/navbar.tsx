@@ -1,21 +1,29 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
-import "./navbar.css";
+import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import { addToken } from "../../../store/tokens/Actions";
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function goLogout() {
-    setToken("");
+    dispatch(addToken(""));
     alert("Usuário deslogado.");
     navigate("/login");
   }
 
-  return (
-    <>
+  //renderização condicional da Navbar:
+  var navbarComponent;
+  if (token != "") {
+    navbarComponent = (
       <AppBar position="static" style={{ backgroundColor: "#eab715" }}>
         <Toolbar variant="dense">
           <Box className="cursor">
@@ -57,14 +65,23 @@ function Navbar() {
               </Box>
             </Link>
 
-            <Box mx={1} className='cursor' onClick={goLogout} style={{ color: "white" }}>
-              <Typography variant="h6" color="inherit">Logout</Typography>
+            <Box
+              mx={1}
+              className="cursor"
+              onClick={goLogout}
+              style={{ color: "white" }}
+            >
+              <Typography variant="h6" color="inherit">
+                Logout
+              </Typography>
             </Box>
           </Box>
         </Toolbar>
       </AppBar>
-    </>
-  );
+    );
+  }
+
+  return <>{navbarComponent}</>;
 }
 
 export default Navbar;
