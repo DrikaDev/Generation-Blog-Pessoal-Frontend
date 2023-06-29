@@ -7,6 +7,7 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/Actions";
+import { toast } from "react-toastify";
 
 function Login() {
   let navigate = useNavigate();
@@ -42,9 +43,29 @@ function Login() {
 
     try {
       await login(`/usuarios/logar`, userLogin, setToken);
-      alert("Usuário logado com sucesso!");
+      //alert("Usuário logado com sucesso!");
+      toast.success("Usuário logado com sucesso!", {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error) {
-      alert("Dados do usuário incorretos!");
+      //alert("Dados do usuário incorretos!");
+      toast.error("Dados do usuário incorretos!", {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 

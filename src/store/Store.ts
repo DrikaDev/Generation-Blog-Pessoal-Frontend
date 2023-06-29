@@ -1,6 +1,6 @@
-import { createStoreHook } from 'react-redux';
+import { createStore } from 'redux';
 import { tokenReducer } from './tokens/TokensReducer';
 
-const store = createStoreHook(tokenReducer);
+const store = createStore(tokenReducer);
 
 export default store;

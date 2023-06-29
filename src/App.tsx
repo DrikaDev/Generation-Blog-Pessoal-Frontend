@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Navbar from "./components/estaticos/navbar/Navbar";
 import Footer from "./components/estaticos/footer/Footer";
 import Home from "./pages/home/Home";
@@ -13,11 +13,13 @@ import DeletaPost from "./components/postagens/deletaPostagem/DeletaPost";
 import DeletaTema from "./components/temas/deletaTema/DeletaTema";
 import { Provider } from "react-redux";
 import store from "./store/Store";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
     <Provider store={store}>
-      // tudo que vai ser renderizado na tela
+      <ToastContainer />
       <Router>
         <Navbar />
 

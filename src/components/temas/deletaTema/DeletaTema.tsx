@@ -5,6 +5,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
 import './DeletaTema.css'
+import { toast } from 'react-toastify';
 
 function DeletaTema(){
     const navigate = useNavigate();
@@ -14,7 +15,17 @@ function DeletaTema(){
   
     useEffect(() => {
       if (token == "") {
-        alert("Você precisa estar logado")
+        //alert("Você precisa estar logado")
+        toast.error("Você precisa estar logado!", {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
         navigate("/login")
       }
     }, [token]);
@@ -38,7 +49,17 @@ function DeletaTema(){
                 'Authorization': token
             }
         });
-        alert("Tema deletado com sucesso!");
+        //alert("Tema deletado com sucesso!");
+        toast.success("Tema deletado com sucesso!", {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
     }
 
     function nao(){
