@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardContent, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import './DeletaPost.css'
 import { buscaId, deleteId } from '../../../services/Service';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
 
 function DeletaPostagem(){
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     const [post, setPost] = useState<Postagem>();
   
     useEffect(() => {
@@ -26,6 +31,7 @@ function DeletaPostagem(){
             progress: undefined,
             theme: "colored",
           });
+          dispatch(addToken(token))
         navigate("/login")
       }
     }, [token]);

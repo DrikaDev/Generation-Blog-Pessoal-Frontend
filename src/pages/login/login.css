@@ -1,10 +1,25 @@
-.textos{
-    font-weight: bold !important;
-    color: black !important;
+.box-login{
+    height: 100vh;
+}
+
+.titulo-entrar h1{
+    font-size: 3rem;
+}
+
+.titulo-entrar p{
+    font-size: 1.8rem;
+}
+
+.box-entrar h1{
+    font-size: 2.5rem;
+}
+
+.entrar h3{
+    font-size: 1.8rem;
 }
 
 .imagemLogin{
-    background-image: url(https://img.freepik.com/vetores-premium/bla-bla-padrao-sem-emenda-de-letras-a-mao-com-baloes-de-fala-amarelos-buzz-concept-chat_511660-391.jpg?w=996);
+    background-image: url('../../assets/Women_talking.gif');
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 70vh;

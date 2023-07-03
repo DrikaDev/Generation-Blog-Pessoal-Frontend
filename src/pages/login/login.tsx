@@ -3,11 +3,11 @@ import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/Service";
-import UserLogin from "../../models/UserLogin";
-import "./Login.css";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/Actions";
 import { toast } from "react-toastify";
+import UserLogin from "../../models/UserLogin";
+import "./Login.css";
 
 function Login() {
   let navigate = useNavigate();
@@ -28,11 +28,11 @@ function Login() {
       [e.target.name]: e.target.value,
     });
     //console.log(JSON.stringify(userLogin));
-  };
+  }
 
   useEffect(() => {
     if (token != "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
@@ -70,19 +70,31 @@ function Login() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className="box-login"
+    >
       <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
+        <Box paddingX={10} >
+
+          <Typography
+            variant="h3"
+            gutterBottom
+            color="textPrimary"
+            component="h3"
+            align="center"
+            className="titulo-entrar"
+          >
+            <h1>De Mãe pra Mãe</h1>
+            <p>Um blog para trocas de idéias!</p>
+          </Typography>
+
           <form onSubmit={onSubmit}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              className="textos"
-            >
-              Entrar
+            <Typography align="center" className="entrar">
+              <h3>Entre e junte-se a nós!</h3>
             </Typography>
 
             <TextField
@@ -108,15 +120,15 @@ function Login() {
               fullWidth
             />
 
-            <Box marginTop={2} textAlign="center">     
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  style={{ backgroundColor: "#eab715" }}
-                >
-                  Logar
-                </Button>
+            <Box marginTop={2} textAlign="center">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                style={{ backgroundColor: "#eab715" }}
+              >
+                Logar
+              </Button>
             </Box>
           </form>
 

@@ -2,17 +2,22 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { busca, buscaId, post, put } from "../../../services/Service";
-import useLocalStorage from "react-use-localstorage";
 import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import "./CadastroPost.css";
 import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import { addToken } from "../../../store/tokens/Actions";
 
 function CadastroPost() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const {id} = useParams<{id: string}>();
     const [temas, setTemas] = useState<Tema[]>([]);
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     useEffect(() => {
         if (token == "") {
@@ -27,7 +32,8 @@ function CadastroPost() {
             progress: undefined,
             theme: "colored",
           });
-        navigate("/login");
+        dispatch(addToken(token))
+        navigate("/login")
         }
     }, [token]);
 

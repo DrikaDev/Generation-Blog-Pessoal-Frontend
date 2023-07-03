@@ -40,7 +40,7 @@ function Footer() {
               </Typography>
             </Box>
 
-            <Box display="flex" alignItems="center" justifyContent="center">
+            <Box display="flex" alignItems="center" justifyContent="center" className="box-redes-sociais">
               <a
                 href="import FacebookIcon from '@mui/icons-material/Facebook';"
                 target="_blank"

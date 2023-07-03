@@ -5,11 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../services/Service";
 import Postagem from "../../../models/Postagem";
 import "./ListaPost.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
+import { addToken } from "../../../store/tokens/Actions";
 
 function ListaPostagem() {
+  const dispatch = useDispatch();
   const [posts, setPosts] = useState<Postagem[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens 
@@ -29,6 +31,7 @@ function ListaPostagem() {
         progress: undefined,
         theme: "colored",
       });
+      dispatch(addToken(token))
       navigate("/login");
     }
   }, [token]);

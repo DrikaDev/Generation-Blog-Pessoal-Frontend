@@ -1,6 +1,12 @@
+.box-navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
 .cursor{
     cursor: pointer;
-    background-color: #eab715
+    background-color: #eab715;
+    color: white
 }
 
 .text-decorator-none{

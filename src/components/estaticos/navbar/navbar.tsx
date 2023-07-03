@@ -1,11 +1,11 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
+import "./Navbar.css";
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -36,10 +36,10 @@ function Navbar() {
   if (token != "") {
     navbarComponent = (
       <AppBar position="static" style={{ backgroundColor: "#eab715" }}>
-        <Toolbar variant="dense">
+        <Toolbar variant="dense" className="box-navbar">
           <Box className="cursor">
             <Typography variant="h5" color="inherit">
-              BlogPessoal-DrikaDev
+              Blog de Mães pra Mães
             </Typography>
           </Box>
 

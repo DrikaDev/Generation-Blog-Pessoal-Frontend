@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
-import { Box, Button, Grid, Typography } from "@material-ui/core";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import ModalPostagem from "../../components/postagens/modalPostagem/MoldaPostagem";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducer";
-import "./Home.css";
 import { toast } from "react-toastify";
+import Mulheres from '../../assets/Women_talking_1.gif'
+import "./Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -38,9 +39,9 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="box-bemvinde"
       >
         <Grid alignItems="center" item xs={6}>
-          <Box padding={13}>
             <Typography
               variant="h3"
               gutterBottom
@@ -49,7 +50,8 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Seja bem vinde ao meu Blog!
+              <h1>Seja bem vinde ao meu Blog!</h1>
+              <p>Um lugar para trocas de idéias de mães pra mães</p>
             </Typography>
 
             <Box display="flex" justifyContent="center">
@@ -62,14 +64,13 @@ function Home() {
                 </Button>
               </Link>
             </Box>
-          </Box>
+          
         </Grid>
 
-        <Grid item xs={6}>
+        <Grid item xs={6} className="img-mulheres">
           <img
-            src="https://img.freepik.com/vetores-premium/bla-bla-padrao-sem-emenda-de-letras-a-mao-com-baloes-de-fala-amarelos-buzz-concept-chat_511660-391.jpg?w=996"
-            alt="Foto com muitos blablablas"
-            style={{ width: "550px", borderRadius: "20px" }}
+            src={Mulheres}
+            alt="Foto com mulheres conversando"
           />
         </Grid>
 

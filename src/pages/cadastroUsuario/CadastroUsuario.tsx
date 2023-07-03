@@ -3,9 +3,9 @@ import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cadastroUsuario } from "../../services/Service";
+import { toast } from "react-toastify";
 import User from "../../models/User";
 import "./CadastroUsuario.css";
-import { toast } from "react-toastify";
 
 function CadastroUsuario() {
     let navigate = useNavigate();
@@ -80,6 +80,7 @@ function CadastroUsuario() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="box-cadastar"
       >
         <Grid item xs={6} className="imagemCadastro"></Grid>
         <Grid item xs={6} alignItems="center">

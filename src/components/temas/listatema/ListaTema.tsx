@@ -3,14 +3,19 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from "@materi
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from '../../../services/Service';
-import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 import Tema from '../../../models/Tema';
 import "./ListaTema.css";
-import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
 
 function ListaTema() {
+  const dispatch = useDispatch();
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +31,8 @@ function ListaTema() {
         progress: undefined,
         theme: "colored",
       });
-      navigate("/login")
+      dispatch(addToken(token));
+      navigate("/login");
     }
   }, [token])
 

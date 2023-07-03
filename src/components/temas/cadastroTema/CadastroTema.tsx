@@ -2,16 +2,21 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Button, Container, TextField, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { buscaId, post, put } from "../../../services/Service";
-import useLocalStorage from "react-use-localstorage";
 import Tema from "../../../models/Tema";
 import "./CadastroTema.css";
 import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import { addToken } from "../../../store/tokens/Actions";
 
 function CadastroTema() {
   //construção da comunicação com o Back-end:
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: "",
@@ -30,6 +35,7 @@ function CadastroTema() {
         progress: undefined,
         theme: "colored",
       });
+      dispatch(addToken(token))
       navigate("/login")
     }
   }, [token]);

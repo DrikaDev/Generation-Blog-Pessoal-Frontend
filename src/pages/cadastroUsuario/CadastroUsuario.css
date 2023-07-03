@@ -1,9 +1,12 @@
+.box-cadastar{
+    height: 100vh;
+}
+
 .imagemCadastro{
-    background-image: url(https://img.freepik.com/vetores-premium/bla-bla-padrao-sem-emenda-de-letras-a-mao-com-baloes-de-fala-amarelos-buzz-concept-chat_511660-391.jpg?w=996);
+    background-image: url('../../assets/Super_thank_you.gif');
     background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 70vh;
-    background-size: cover;
+    min-height: 90vh;
+    background-size: contain;
     background-position: center;
 }
 

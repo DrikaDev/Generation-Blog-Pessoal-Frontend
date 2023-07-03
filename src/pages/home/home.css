@@ -1,6 +1,27 @@
+.box-bemvinde{
+    height: 100vh;
+}
+
 .titulo{
-    color: black !important;
-    font-weight: bold !important;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo h1{
+    font-size: 2.5rem;
+}
+
+.titulo p{
+    font-size: 1.8rem;
+    width: 30rem;
+    margin: 0 auto;
+}
+
+.img-mulheres{
+    display: flex;
+    justify-content: center;
+    height: 27rem;
 }
 
 .botao{
