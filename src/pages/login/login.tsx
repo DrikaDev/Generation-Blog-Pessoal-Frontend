@@ -88,7 +88,7 @@ function Login() {
             align="center"
             className="titulo-entrar"
           >
-            <h1>De Mãe pra Mãe</h1>
+            <h1>Moms in Tech</h1>
             <p>Um blog para trocas de idéias!</p>
           </Typography>
 

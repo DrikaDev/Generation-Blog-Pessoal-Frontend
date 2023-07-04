@@ -6,6 +6,7 @@ import Modal from '@material-ui/core/Modal'
 import CloseIcon from "@material-ui/icons/Close"
 import CadastroPost from "../cadastroPostagem/CadastroPost";
 import './ModalPostagem.css'
+import TabPostagem from "../tabpostagem/TabPostagem";
 
 function getModalStyle(){
     const top= 50;
@@ -24,7 +25,6 @@ const useStyles = makeStyles ((theme: Theme) =>
             position: 'absolute',
             width: 400,
             backgroundColor: theme.palette.background.paper,
-            border: '2px solid #000',
             boxShadow: theme.shadows[5],
             padding: theme.spacing(2, 4, 3)
         }
@@ -50,15 +50,15 @@ function ModalPostagem(){
             <Box display='flex' justifyContent='flex-end' className="cursor">
                 <CloseIcon onClick={handleClose} />
             </Box>
-
-            <CadastroPost/>
+            {/* <CadastroPost/> */}
+            < TabPostagem />
         </div>
     )
 
     return (
         <div>
             <Button variant='outlined' className='btnModal' onClick={handleOpen}>
-                Nova Postagem
+                Sobre Nós
             </Button>
             <Modal open={open} onClose={handleClose} aria-labelledby="simple-modal-title" aria-describedby="simple-modal-description">
                 {body}

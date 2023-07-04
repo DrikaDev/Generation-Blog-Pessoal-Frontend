@@ -39,7 +39,7 @@ function Navbar() {
         <Toolbar variant="dense" className="box-navbar">
           <Box className="cursor">
             <Typography variant="h5" color="inherit">
-              Blog de Mães pra Mães
+              Blog de Mãe pra Mãe
             </Typography>
           </Box>
 
@@ -52,10 +52,26 @@ function Navbar() {
               </Box>
             </Link>
 
+            <Link to={"/formularioPostagem"} className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  Cadastrar Post
+                </Typography>
+              </Box>
+            </Link>
+
             <Link to={"/postagens"} className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
-                  Postagens
+                  Ver Posts
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to={"/formularioTema"} className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  Cadastrar Tema
                 </Typography>
               </Box>
             </Link>
@@ -63,15 +79,7 @@ function Navbar() {
             <Link to={"/temas"} className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
-                  Temas
-                </Typography>
-              </Box>
-            </Link>
-
-            <Link to={"/cadastrarTema"} className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Cadastrar Temas
+                  Ver Temas
                 </Typography>
               </Box>
             </Link>
@@ -83,7 +91,7 @@ function Navbar() {
               style={{ color: "white" }}
             >
               <Typography variant="h6" color="inherit">
-                Logout
+                Sair
               </Typography>
             </Box>
           </Box>

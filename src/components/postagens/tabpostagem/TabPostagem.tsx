@@ -1,11 +1,31 @@
 import React, { useState } from "react";
 import { AppBar, Box, Tab, Tabs, Typography } from "@material-ui/core";
 import { TabContext, TabPanel } from "@material-ui/lab";
-import ListaPostagem from "../listapostagem/ListaPost";
+import CloseIcon from "@material-ui/icons/Close"
 import "./TabPostagem.css";
 
 function TabPostagem() {
   const [value, setValue] = useState("1");
+
+  // const [open, setOpen] = React.useState(false)
+
+  //   const handleOpen = () => {
+  //       setOpen(true)
+  //   }
+
+  //   const handleClose = () => {
+  //       setOpen(false)
+  //   }
+
+  //   const body = (
+  //     <div >
+  //         <Box display='flex' justifyContent='flex-end' className="cursor">
+  //             <CloseIcon onClick={handleClose} />
+  //         </Box>
+  //         {/* <CadastroPost/> */}
+  //         {/* < TabPostagem /> */}
+  //     </div>
+  // )
 
   function handleChange(e: React.ChangeEvent<{}>, newValue: string) {
     setValue(newValue);
@@ -13,45 +33,32 @@ function TabPostagem() {
 
   return (
     <>
-      <TabContext value={value}>
-        <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" 
-          onChange={handleChange} 
-          style={{ backgroundColor: "#eab715" }}>
-            <Tab label="Todas as postagens" value="1" />
+      <TabContext value={value} >
+
+        <AppBar position="static" >
+          <Tabs
+            centered
+            indicatorColor="secondary"
+            onChange={handleChange}
+            style={{ backgroundColor: "#eab715" }}
+          >
             <Tab label="Sobre nós" value="2" />
           </Tabs>
         </AppBar>
 
-        <TabPanel value="1">
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
-            <ListaPostagem />
-          </Box>
-        </TabPanel>
-
-        <TabPanel value="2">
-          <Typography
-            variant="h5"
-            gutterBottom
-            color="textPrimary"
-            component="h5"
-            align="center"
-            className="titulo"
-          >
-            Sobre nós
-          </Typography>
+        <TabPanel value="2" >
           <Typography
             variant="body1"
             gutterBottom
             color="textPrimary"
             align="justify"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci
-            odio, culpa dolorem aliquid sapiente recusandae, repellendus
-            repellat nostrum est odit reprehenderit sequi. At molestiae
-            reprehenderit laboriosam laudantium, asperiores magnam error!
+            Aqui é um espaço criado para mamães que estão na tecnologia e que
+            gostariam de compartilhar ideias, experiências, dicas ou
+            simplesmente apenas desabafar pois ninguém é de ferro.
           </Typography>
         </TabPanel>
+
       </TabContext>
     </>
   );

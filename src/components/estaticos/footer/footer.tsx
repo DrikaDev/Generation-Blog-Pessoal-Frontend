@@ -3,9 +3,9 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { Grid, Box, Typography } from "@material-ui/core";
-import "./footer.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
+import "./Footer.css";
 
 function Footer() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -70,7 +70,7 @@ function Footer() {
                 gutterBottom
                 className="textosFooter"
               >
-                Desenvolvido com ❤️ por DrikaDev em Junho/2023 no curso da
+                &copy; Desenvolvido com 🧡 por DrikaDev em Junho/2023 no curso da
                 Generation
               </Typography>
             </Box>

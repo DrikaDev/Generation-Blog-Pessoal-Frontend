@@ -45,7 +45,7 @@ function CadastroTema() {
   }, [id]);
 
   async function findById(id: string) {
-    buscaId(`/tema/${id}`, setTema, {
+    buscaId(`/temas/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
@@ -65,7 +65,7 @@ function CadastroTema() {
 
     if(id !== undefined){
         console.log(tema)
-        put(`/tema`, tema, setTema, {
+        put(`/temas`, tema, setTema, {
             headers: {
                 'Authorization': token
             }
@@ -82,7 +82,7 @@ function CadastroTema() {
           theme: "colored",
         });
     }else{
-        post(`/tema`, tema, setTema, {
+        post(`/temas`, tema, setTema, {
             headers: {
                 'Authorization': token
             }
@@ -111,31 +111,33 @@ function CadastroTema() {
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography
-          variant="h3"
+          variant="h4"
           color="textSecondary"
-          component="h1"
+          component="h4"
           align="center"
         >
-          Formulário de Cadadastro
+          Cadastre aqui seu tema novo
         </Typography>
+
         <TextField
           value={tema.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="descricao"
-          label="descricao"
-          variant="outlined"
+          label="Nome do tema"
           name="descricao"
-        ></TextField>
-        <Button type="submit" variant="contained" color="primary">
+          variant="outlined"
+          margin="normal"
+          fullWidth
+        />
+
+        <Button type="submit" variant="contained" color="primary"
+        style={{ backgroundColor: "#eab715" }}>
           Finalizar
         </Button>
+        
       </form>
     </Container>
   );
 }
 
 export default CadastroTema;
-function back() {
-    throw new Error("Function not implemented.");
-}
-

@@ -50,11 +50,11 @@ function Home() {
               align="center"
               className="titulo"
             >
-              <h1>Seja bem vinde ao meu Blog!</h1>
-              <p>Um lugar para trocas de idéias de mães pra mães</p>
+              <h1>Que bom que você veio!</h1>
+              <p>O lugar certo para trocas de idéias de mães pra mães</p>
             </Typography>
 
-            <Box display="flex" justifyContent="center">
+            {/* <Box display="flex" justifyContent="center">
               <Box marginRight={1}>
                 <ModalPostagem />
               </Box>
@@ -63,7 +63,7 @@ function Home() {
                   Ver Postagens
                 </Button>
               </Link>
-            </Box>
+            </Box> */}
           
         </Grid>
 

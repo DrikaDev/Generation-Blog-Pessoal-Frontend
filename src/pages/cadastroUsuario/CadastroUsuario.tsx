@@ -149,7 +149,7 @@ function CadastroUsuario() {
                     className="btnCancelar"
                     variant="contained"
                     color="primary"
-                    style={{ backgroundColor: "black" }}
+                    style={{ backgroundColor: "gray" }}
                   >
                     Cancelar
                   </Button>

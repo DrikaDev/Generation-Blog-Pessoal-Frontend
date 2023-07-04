@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../services/Service";
@@ -14,8 +21,8 @@ function ListaPostagem() {
   const dispatch = useDispatch();
   const [posts, setPosts] = useState<Postagem[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens 
-  )
+    (state) => state.tokens
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +38,7 @@ function ListaPostagem() {
         progress: undefined,
         theme: "colored",
       });
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/login");
     }
   }, [token]);
@@ -39,7 +46,7 @@ function ListaPostagem() {
   async function getPost() {
     await busca("/postagens", setPosts, {
       headers: {
-        'Authorization': token,
+        Authorization: token,
       },
     });
   }
@@ -51,24 +58,21 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2}>
+        <Box m={2} className="box-postagens">
           <Card variant="outlined">
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Postagens
+              <Typography variant="h5" component="h5">
+                {post.tema?.descricao}
               </Typography>
               <Typography variant="body2" component="p">
                 {post.texto}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {post.tema?.descricao}
               </Typography>
             </CardContent>
 
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
-                  to={`/atualizarPostagem/${post.id}`}
+                  to={`/formularioPostagem/${post.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
@@ -77,6 +81,7 @@ function ListaPostagem() {
                       className="marginLeft"
                       size="small"
                       color="primary"
+                      style={{ backgroundColor: "#eab715" }}
                     >
                       Atualizar
                     </Button>
@@ -88,7 +93,12 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button
+                      variant="contained"
+                      size="small"
+                      color="secondary"
+                      style={{ backgroundColor: "gray" }}
+                    >
                       Deletar
                     </Button>
                   </Box>
