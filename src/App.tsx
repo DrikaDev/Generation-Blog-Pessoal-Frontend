@@ -10,8 +10,8 @@ import ListaPost from "./components/postagens/listapostagem/ListaPost";
 import ListaTema from "./components/temas/listaTema/ListaTema";
 import DeletaPost from "./components/postagens/deletaPostagem/DeletaPost";
 import DeletaTema from "./components/temas/deletaTema/DeletaTema";
-import { Provider } from "react-redux";
 import store from "./store/Store";
+import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
