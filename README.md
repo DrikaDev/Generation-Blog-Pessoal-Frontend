@@ -1,7 +1,7 @@
 # Generation-Blog-Pessoal-Frontend
 ![image](https://github.com/DrikaDev/Generation-Blog-Pessoal/assets/102387476/ac691388-dc5c-49c0-9571-5c650d866637)
 
-Conclusão do Frontend do Projeto Blog Pessoal 💛🧡🖤
+🪄 Conclusão do Frontend do Projeto Blog Pessoal 💛🧡🖤
 
 <img width="941" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/8657d31f-8755-4805-8088-a64ddf1f5d92">
 
@@ -9,3 +9,6 @@ Conclusão do Frontend do Projeto Blog Pessoal 💛🧡🖤
 
 <img width="934" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/06f563e2-1ca1-4335-b856-4c3238c3adea">
 
+👉🏻 Tentando arrumar os Erros pro deploy:
+
+<img width="607" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/ffcf9155-04c4-4f88-a29c-f0bbddedc25d">
