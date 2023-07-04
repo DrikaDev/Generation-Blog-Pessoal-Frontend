@@ -2,12 +2,12 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Button, Container, TextField, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { buscaId, post, put } from "../../../services/Service";
-import Tema from "../../../models/Tema";
-import "./CadastroTema.css";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
+import Tema from "../../../models/Tema";
+import "./CadastroTema.css";
 
 function CadastroTema() {
   //construção da comunicação com o Back-end:
