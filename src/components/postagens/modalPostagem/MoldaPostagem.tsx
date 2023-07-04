@@ -4,9 +4,8 @@ import { Button } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal'
 import CloseIcon from "@material-ui/icons/Close"
-import CadastroPost from "../cadastroPostagem/CadastroPost";
-import './ModalPostagem.css'
 import TabPostagem from "../tabpostagem/TabPostagem";
+import './ModalPostagem.css'
 
 function getModalStyle(){
     const top= 50;
@@ -50,7 +49,6 @@ function ModalPostagem(){
             <Box display='flex' justifyContent='flex-end' className="cursor">
                 <CloseIcon onClick={handleClose} />
             </Box>
-            {/* <CadastroPost/> */}
             < TabPostagem />
         </div>
     )

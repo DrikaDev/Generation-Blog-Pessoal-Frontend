@@ -1,31 +1,10 @@
 import React, { useState } from "react";
 import { AppBar, Box, Tab, Tabs, Typography } from "@material-ui/core";
 import { TabContext, TabPanel } from "@material-ui/lab";
-import CloseIcon from "@material-ui/icons/Close"
 import "./TabPostagem.css";
 
 function TabPostagem() {
   const [value, setValue] = useState("1");
-
-  // const [open, setOpen] = React.useState(false)
-
-  //   const handleOpen = () => {
-  //       setOpen(true)
-  //   }
-
-  //   const handleClose = () => {
-  //       setOpen(false)
-  //   }
-
-  //   const body = (
-  //     <div >
-  //         <Box display='flex' justifyContent='flex-end' className="cursor">
-  //             <CloseIcon onClick={handleClose} />
-  //         </Box>
-  //         {/* <CadastroPost/> */}
-  //         {/* < TabPostagem /> */}
-  //     </div>
-  // )
 
   function handleChange(e: React.ChangeEvent<{}>, newValue: string) {
     setValue(newValue);

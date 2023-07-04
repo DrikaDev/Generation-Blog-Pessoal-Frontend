@@ -12,10 +12,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../services/Service";
 import { toast } from "react-toastify";
 import Tema from "../../../models/Tema";
-import "./ListaTema.css";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
+import "./ListaTema.css";
 
 function ListaTema() {
   const dispatch = useDispatch();

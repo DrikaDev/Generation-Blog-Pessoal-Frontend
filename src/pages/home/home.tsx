@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
-import ModalPostagem from "../../components/postagens/modalPostagem/MoldaPostagem";
-import { Box, Button, Grid, Typography } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
+import { Grid, Typography } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
@@ -53,18 +52,6 @@ function Home() {
               <h1>Que bom que você veio!</h1>
               <p>O lugar certo para trocas de idéias de mães pra mães</p>
             </Typography>
-
-            {/* <Box display="flex" justifyContent="center">
-              <Box marginRight={1}>
-                <ModalPostagem />
-              </Box>
-              <Link to={"/postagens"} className="text-decorator-none">
-                <Button variant="outlined" className="botao">
-                  Ver Postagens
-                </Button>
-              </Link>
-            </Box> */}
-          
         </Grid>
 
         <Grid item xs={6} className="img-mulheres">
