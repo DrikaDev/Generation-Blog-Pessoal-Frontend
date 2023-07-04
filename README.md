@@ -3,6 +3,9 @@
 
 # Fazendo o Frontend do Backend do Projeto Blog Pessoal
 
-![BlogPessoal](https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/594e2acb-53e5-448b-8132-0bd07cc2d65e)
+<img width="941" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/8657d31f-8755-4805-8088-a64ddf1f5d92">
 
-![BlogPessoal 1](https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/d34138b9-b9f0-488f-ae52-f1ed86946d64)
+<img width="940" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/32b11918-b36b-4996-baca-5867f0c65c4a">
+
+<img width="934" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/06f563e2-1ca1-4335-b856-4c3238c3adea">
+
