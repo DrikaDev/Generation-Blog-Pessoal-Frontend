@@ -10,7 +10,7 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 
 function Login() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   //não utilizar o let history = useHistory()
 
   const dispatch = useDispatch();
