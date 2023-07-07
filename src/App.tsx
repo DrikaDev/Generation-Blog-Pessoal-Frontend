@@ -1,19 +1,19 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Navbar from "./components/estaticos/Navbar/Navbar";
-import Footer from "./components/estaticos/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import CadastroUsuario from "./pages/cadastroUsuario/CadastroUsuario";
-import CadastroPost from "./components/postagens/cadastroPostagem/CadastroPost";
-import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
-import ListaPost from "./components/postagens/listapostagem/ListaPost";
-import ListaTema from "./components/temas/ListaTema/ListaTema";
-import DeletaPost from "./components/postagens/deletaPostagem/DeletaPost";
-import DeletaTema from "./components/temas/deletaTema/DeletaTema";
-import store from "./store/Store";
-import { Provider } from "react-redux";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/estaticos/Navbar/Navbar';
+import Footer from './components/estaticos/Footer/Footer';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
+import CadastroPost from './components/postagens/cadastroPostagem/CadastroPost';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import ListaPost from './components/postagens/listapostagem/ListaPost';
+import ListaTema from './components/temas/ListaTema/ListaTema';
+import DeletaPost from './components/postagens/deletaPostagem/DeletaPost';
+import DeletaTema from './components/temas/deletaTema/DeletaTema';
+import store from './store/Store';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
