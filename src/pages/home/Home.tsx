@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
 import Mulheres from '../../assets/Women_talking_1.gif'
-import "./Home.css";
+import "./home.css";
 
 function Home() {
   const navigate = useNavigate();

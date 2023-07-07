@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
-import "./Navbar.css";
+import "./navbar.css";
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
