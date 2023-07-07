@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/estaticos/navbar/Navbar';
-import Footer from './components/estaticos/footer/Footer';
+import Navbar from './components/estaticos/navbar/Navbar.tsx';
+import Footer from './components/estaticos/footer/Footer.tsx';
 import Home from './pages/home/Home';
-import Login from './pages/login/Login';
+import Login from './pages/login/Login.tsx';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import CadastroPost from './components/postagens/cadastroPostagem/CadastroPost';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
-import ListaPost from './components/postagens/listapostagem/ListaPost';
+import ListaPost from './components/postagens/listapostagem/ListaPost.tsx';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import DeletaPost from './components/postagens/deletaPostagem/DeletaPost';
 import DeletaTema from './components/temas/deletaTema/DeletaTema';
