@@ -8,7 +8,3 @@
 <img width="940" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/32b11918-b36b-4996-baca-5867f0c65c4a">
 
 <img width="934" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/06f563e2-1ca1-4335-b856-4c3238c3adea">
-
-👉🏻 Tentando arrumar os Erros pro deploy:
-
-<img width="607" alt="image" src="https://github.com/DrikaDev/Generation-Blog-Pessoal-Frontend/assets/102387476/ffcf9155-04c4-4f88-a29c-f0bbddedc25d">
